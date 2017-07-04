@@ -1,0 +1,8 @@
+[
+  {"firstName":"Marcel", "lastName":"rus", "phone":"01"},
+  {"firstName":"Marcel", "lastName":"rus", "phone":"02"},
+  {"firstName":"Marcel", "lastName":"rus", "phone":"03"},
+  {"firstName":"Marcel", "lastName":"rus", "phone":"04"},
+  {"firstName": "andrei"},
+  {"lastName":"basescu"}
+]
