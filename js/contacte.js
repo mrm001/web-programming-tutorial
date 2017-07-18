@@ -7,7 +7,11 @@ function getRow(contact){
     var firstName = contact.firstName || '';
 
     var row = '<tr><td>' + lastName + '</td><td>' + firstName + '</td><td>' + phone + '</td>' +
-        '<td>[<a href="date/remove.html?id= '+id+ '">x</a>]</td>' +
+        '<td class="action"> ' +
+            '<span>[<a href="date/remove.html?id= '+id+ '">x</a>]</span>' +
+            '<span>[<a href="#">edit</a>]</span>' +
+
+        '</td>'+
     '</tr>';
     return row;
 }

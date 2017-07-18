@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!--<meta charset="UTF-8">-->
+    <meta http-equiv="refresh" content="3; url=../contacte.html />
+    <title>remove</title>
+</head>
+
+<body>
+        contact added (<div id="contact-id"></div>)
+    <script>
+        var parameters = location.search.substr(1);
+        var paramArray = parameters.split('&');
+        console.info(paramArray);
+       document.getElementById('contact-id').innerHTML= paramArray.join('; <br>') +';'
+//        document.getElementById('contact-id').innerHTML= paramArray.replace(/&/ig, '; <br>')
+    </script>
+</body>
+</html>
