@@ -1,52 +1,37 @@
 
-function getRow(firstName, lastName, phone){
-    if(phone === undefined){
-        phone = ''
-    }
-    if(typeof lastName == 'undefined') {
-        lastName = ''
-    }
+function getRow(contact){
 
-    firstName = firstName || '';
+    var id = contact.id ;
+    var phone = contact.phone || '';
+    var lastName = contact.lastName || '';
+    var firstName = contact.firstName || '';
 
-    return '<tr><td>' + lastName + '</td><td>' + firstName + '</td><td>' + phone + '</td></tr>';
+    var row = '<tr><td>' + lastName + '</td><td>' + firstName + '</td><td>' + phone + '</td>' +
+        '<td>[<a href="date/remove.html?id= '+id+ '">x</a>]</td>' +
+    '</tr>';
+    return row;
 }
 
-/*function getRow(firstName, lastName, phone) {
-    var row = '<tr><td>' + lastName + '</td><td>' + firstName + '</td><td>' + phone + '</td></tr>';
-    return row;
-}*/
-//firstName = firstName[];
-
-var contacte = [];
-
-var person = {
-    lastName: 'Rus',
-    firstName: 'Marcel',
-    age: 36,
-    married: 'false',
-    skills: ['html', 'css'],
-    voiceCall: function (nume) {
-        console.log(' te rog sa suni pe ', nume);
-    },
-    partner: {
-        firstName: 'M',
-        age:18
-    }
-};
-
-console.info(person.firstName);
-person.voiceCall("Soacra");
+// var person = {
+//     lastName: 'Rus',
+//     firstName: 'Marcel',
+//     age: 36,
+//     married: 'false',
+//     skills: ['html', 'css'],
+//     voiceCall: function (nume) {
+//         console.log(' te rog sa suni pe ', nume);
+//     },
+//     parage:18
+//};
+//
+// console.info(person.firstName);
+// person.voiceCall("Soacra");
 
 var tableContent = '';
 
 function createRow(contact) {
-    tableContent += getRow(contact.firstName, contact.lastName, contact.phone);
+    tableContent += getRow(contact);
 };
-
-for(var i= 0; i<contacte.length; i++) {
-    createRow(contacte[i]);
-}
 
 $.ajax('date/contacte.json').done(function (contacte){
     console.info('contacte', contacte);
