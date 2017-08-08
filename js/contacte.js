@@ -37,10 +37,14 @@ function createRow(contact) {
     tableContent += getRow(contact);
 };
 
-$.ajax('date/contacte.json').done(function (contacte){
-    console.info('contacte', contacte);
+$.ajax('date/contacte.json',{
+    cache:false,
+    dataTyoe: 'json'
+    }).done(function (contacte){
+    console.debug('contacte', contacte);
     contacte.forEach(createRow);
     $("#contacts-list tbody").html(tableContent);
+
 });
 
 
