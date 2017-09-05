@@ -185,7 +185,14 @@ footer {
 
 #contacts-list.action span{
     color: blue;
+}#contacts-list.action span:hover{
+    color: red;
 }
 #contacts-list.action span hover{
     color: red;
 }
+#contacts-list .action span {
+    display: none;
+}#contacts-list tr:hover .action span {
+    display: inline;
+ }
